@@ -1,0 +1,286 @@
+/* =================== general =================== */
+html{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+}
+
+.sub{
+    font-size: 2em;
+    opacity: 0.5;
+}
+
+img {
+    height: 60px;
+}
+
+span{
+    font-style: italic;
+    color: #76deda;
+}
+
+hr{
+    opacity: 0.5;
+}
+
+/* =================== main grid =================== */
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "about"
+    "project"
+    "contact";
+}
+
+.title, .projects, .about{
+    padding: 30px;
+    height: 100vh;
+}
+
+.title{
+    background-image: url("/img/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: title;
+    padding-top: 60px;
+}
+
+.projects, .about{
+    background-image: url("/img/bg_sub.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.projects{
+    grid-area: project;
+}
+
+.about{
+    grid-area: about;
+}
+
+#contact{
+    background: black;
+    grid-area: contact;
+    text-align: center;
+    padding: 30px;
+}
+
+/* =================== title =================== */
+.title-grid{
+    display: grid;
+    grid-template-areas: 
+    "title title title nav"
+    "mobile mobile mobile mobile"
+    "heading heading heading heading"
+    "btn btn btn btn"
+    "tools tools tools tools";
+}
+
+.title-grid h4{
+    grid-area: heading;
+    justify-self: center;
+    font-size: 2em;
+    margin-left: 50px;
+    margin-right: 30px;
+    margin-bottom: 100px;
+}
+
+.title-grid .sub{
+    grid-area: title;
+}
+
+.title-grid nav{
+    grid-area: nav;
+    justify-self: end;
+}
+
+.title-grid .tools{
+    grid-area: tools;
+    justify-self: end;
+}
+
+/* =================== navigation =================== */
+nav img{
+    height: 40px;
+}
+
+.web-menu{
+    display: none;
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:visited{
+    color: white;
+}
+
+.mobile-menu{
+    grid-area: mobile;
+    background: black;
+    padding: 0px 20px 0px 20px;
+    margin-top: 10px;
+    font-size: 1.5em;
+    display: none;
+}
+
+.show-links{
+    display: block;
+}
+
+/* =================== about =================== */
+
+.about-grid{
+    display: grid;
+    grid-template-areas: "title"
+    "article"
+    "skills";
+    gap: 40px;
+}
+
+.about .sub{
+    grid-area: title;
+    justify-self: end;
+}
+
+.skills{
+    grid-area: skills;
+    justify-self: center;
+    padding: 0px 40px 0px 40px;
+}
+
+.skills img{
+    padding: 3px;
+}
+
+.skills h2{
+    opacity: 0.5;
+}
+
+article{
+    grid-area: article;
+    text-align: justify;
+    padding: 40px 40px 0px 40px;
+}
+/* =================== project =================== */
+
+.projects-grid{
+    display: grid;
+    grid-template-areas: "title"
+    "project";
+    gap: 40px;
+}
+
+.project{
+    background-color: black;
+    color: white;
+    height: 150px;
+    width: 100%;
+    border-radius: 10px;
+    justify-self: center;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.project p{
+    padding: 0px 50px 0px 50px;
+    opacity: 0.7;
+}
+
+/* .project:hover{
+    opacity: 0.5;
+} */
+
+.projects .sub{
+    grid-area: title;
+}
+
+.project-container{
+    display: grid;
+    grid-area: project;
+    gap: 10px;
+    margin: 40px;
+}
+
+/* =================== contact =================== */
+
+#contact img{
+    padding: 10px;
+}
+
+/* =================== others =================== */
+#date{
+    font-style: normal;
+}
+
+
+/* =================== media =================== */
+
+@media screen and (min-width: 1080px) {
+    .title, .projects, .about{
+        padding: 0px 200px 0px 200px;
+        font-size: 1em;
+    }
+
+    .title{
+        padding-top: 150px;
+    }
+
+    .title h4{
+        margin-top: 50px;
+        margin-left: 10px;
+    }
+
+    article{
+        font-size: 1.5em;
+    }
+
+    .project-container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project{
+        height: 300px;
+        font-size: 1.5em;
+    }
+  }
+
+@media screen and (min-width: 360px) and (max-width: 411px) {
+    .title, .projects, .about{
+        padding: 0px 20px 0px 20px;
+        font-size: 0.7em;
+    }
+
+    .title{
+        padding: 80px 40px 0px 40px;
+    }
+
+    img{
+        height: 40px;
+    }
+
+    .project-container{
+        margin: 10px;
+    }
+
+    .project{
+        height: 100px;
+    }
+  }
+
+  /* even smaller screens needs to be optimised. (320) */
